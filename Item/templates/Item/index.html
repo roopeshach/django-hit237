@@ -1,0 +1,49 @@
+{% include 'Item/base.html' %}
+
+
+        <!-- Header-->
+        <header class="bg-primary bg-gradient text-white">
+            <div class="container px-4 text-center">
+                <h1 class="fw-bolder">Welcome to S123 HIT237 </h1>
+                <h1>Django Web Project</h1>
+                <p class="lead">A product information website.</p>
+                <a class="btn btn-lg btn-light" href="#members">See Members!</a>
+            </div>
+        </header>
+        <!-- About section-->
+        <section id="about">
+            <div class="container  ">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        
+                        <p class="lead">
+                            {% autoescape off %}
+                            {{intro}} 
+                            {% endautoescape %}
+                        </p>
+                       
+                </div>
+            </div>
+        </section>
+        <hr>
+        <section id="members">
+            <div class="container ">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <h2>Members of project.</h2>
+                        
+                       {% for student in students %}
+                         
+                               <b> {{forloop.counter}}.</b>
+                            Name: {{student.name}} 
+                            <br>
+                            Roll No: <i>{{student.roll}}</i>
+                            <hr>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </section>
+       
+       
+{% include 'Item/footer.html' %}

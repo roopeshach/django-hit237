@@ -1,0 +1,41 @@
+{% include 'Item/base.html' %}
+
+     <!-- Header-->
+     <header class="bg-primary bg-gradient text-white">
+        <div class="container px-4 text-center">
+            <h1 class="fw-bolder">Items List </h1>
+            <p class="lead">A List of Items Available.</p>
+            <a class="btn btn-lg btn-light" href="/">Go to Home !</a>
+        </div>
+    </header>
+
+      <!-- Items List section-->
+      <div id="data-models">
+        <div class="container  ">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 mt-3 ">
+                    
+                    <h3>Data Model</h3>
+                    <table class="table table-striped">
+                        <tr>
+                            <th>Field Name</th>
+                            <th>Purpose</th>
+                            <th>Data Type</th>
+                            <th>Constraints</th>
+                        </tr>
+                        {% for field in data_model %}
+                        <tr>
+                            <td>{{ field.name }}</td>
+                            <td>{{ field.purpose }}</td>
+                            <td>{{ field.data_type }}</td>
+                            <td>
+                                {{field.constraints}}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+            </div>
+        </div>
+      </div>
+
+{% include 'Item/footer.html' %}
