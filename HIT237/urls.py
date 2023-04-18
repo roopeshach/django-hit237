@@ -24,7 +24,7 @@ urlpatterns = [
 ] + static(settings.STATIC_URL, document_root=settings.MEDIA_ROOT)
 
 
-admin.site.site_header = "Item Administration"
+admin.site.site_header = "Wast Administration"
 admin.site.site_title = "Item Admin Portal"
 admin.site.index_title = "Welcome to Item Researcher Portal"
 

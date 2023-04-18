@@ -30,41 +30,44 @@
      <!-- Header-->
      <header class="bg-primary bg-gradient text-white">
         <div class="container px-4 text-center">
-            <h1 class="fw-bolder">Items List </h1>
-            <p class="lead">A List of Items Available.</p>
+            <h1 class="fw-bolder">Food Waste List </h1>
+            <p class="lead">A List of Food Waste Frequently Used.</p>
             <a class="btn btn-lg btn-light" href="/">Go to Home !</a>
         </div>
     </header>
 
       <!-- Items List section-->
-      <div id="data-models">
+      <div id="items">
         <div class="container  ">
             <div class="row justify-content-center">
                 <div class="col-lg-8 mt-3 ">
                     
-                    <h3>Data Model</h3>
-                    <table class="table table-striped">
-                        <tr>
-                            <th>Field Name</th>
-                            <th>Purpose</th>
-                            <th>Data Type</th>
-                            <th>Constraints</th>
-                        </tr>
-                        {% for field in data_model %}
-                        <tr>
-                            <td>{{ field.name }}</td>
-                            <td>{{ field.purpose }}</td>
-                            <td>{{ field.data_type }}</td>
-                            <td>
-                                {{field.constraints}}
-                            </td>
-                        </tr>
-                        {% endfor %}
+                   <table class="table">
+                          <thead>
+                            <tr>
+                                 <th scope="col">Food Waste Name</th>
+                                 <th scope="col">Food Waste Type </th>
+                                 <th scope="col">Where to throw? </th>
+                                
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {% for waste in food_waste %}
+                            <tr>
+                                 <td>{{waste.name}}</td>
+                                 <td>{{waste.type}}</td>
+                                    <td>{{waste.where_to_throw}}</td>
+                                 <td>
+                                      <a href="/food-waste/{{waste.id}}" class="btn btn-success">View</a>
+                                    </td>
+                            </tr>
+                            {% endfor %}
+                          </tbody>
+                   
                     </table>
             </div>
         </div>
       </div>
-
       <footer class="py-5 bg-dark mt-5">
         <div class="container px-4"><p class="m-0 text-center text-white">Copyright &copy; S123 HIT237 Website Project</p></div>
     </footer>
