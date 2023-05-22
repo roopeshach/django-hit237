@@ -27,9 +27,10 @@ class FoodWaste(models.Model):
     image = models.ImageField(upload_to='food_waste')
     time_to_decay = models.CharField(max_length=254)
     carbon_footprint = models.CharField(max_length=254)
+    added_by = models.ForeignKey(Student, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
     
 
-    
+
