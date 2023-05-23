@@ -3,6 +3,9 @@ from django.db import models
 # Create your models here.
 
 class Student(models.Model):
+    """
+    This class represents an instance of student.
+    """
     name = models.CharField(max_length=254)
     roll = models.CharField(max_length=254)
     image = models.ImageField(upload_to='students')
@@ -11,6 +14,10 @@ class Student(models.Model):
         return self.name
     
 class WasteType(models.Model):
+    """
+    This class represents an instance of waste type.
+    
+    """
     name = models.CharField(max_length=254)
     description = models.TextField()
     image = models.ImageField(upload_to='waste_type')
@@ -19,6 +26,9 @@ class WasteType(models.Model):
         return self.name
     
 class FoodWaste(models.Model):
+    """
+    This class represents an instance of food waste.
+    """
     name = models.CharField(max_length=254)
     type = models.ForeignKey(WasteType, on_delete=models.CASCADE)
     description = models.TextField()
