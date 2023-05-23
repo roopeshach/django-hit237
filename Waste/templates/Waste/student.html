@@ -1,0 +1,66 @@
+{% include 'Waste/base.html' %}
+
+<section id="members">
+    <div class="container ">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h2>Members of project.</h2>
+                <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        Add New Student
+                    </button>
+                    
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                            <div class="modal-body">
+                                <form method="POST" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                            {{form}}
+
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Save changes</button>
+                            </form>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                <hr>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Member Name</th>
+                            <th>Student ID</th>
+                            <th>Image</th>
+                            <th> Edit </th>
+                            <th> Delete </th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {% for member in students %}
+                        <tr>
+                            <td>{{member.name}}</td>
+                            <td>{{member.roll}}</td>
+                            <td><img src="{{member.image.url}}" alt="{{member.name}}" width="100px"></td>
+                            <td><a class="btn btn-warning" href="{% url 'edit-student' member.id %}">Edit</a></td>
+                            <td><a class="btn btn-danger" href="{% url 'delete-student' member.id %}">Delete</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include 'Waste/footer.html' %}

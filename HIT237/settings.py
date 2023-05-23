@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Item',
+    'Waste',
 ]
 
 MIDDLEWARE = [
@@ -124,8 +125,8 @@ STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
 MEDIA_URL = '/media/'
-
-MEDIA_ROOT = BASE_DIR / 'media'
+from os.path import join
+MEDIA_ROOT = join(BASE_DIR, 'media')
 
 # STATIC_ROOT = BASE_DIR / 'static'
 
