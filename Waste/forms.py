@@ -16,6 +16,11 @@ class WasteTypeForm(forms.ModelForm):
     class Meta:
         model = WasteType
         fields = ('name', 'description', 'image')
+        widgets = {
+            'name': forms.TextInput(attrs={'class': 'form-control'}),
+            'description': forms.Textarea(attrs={'class': 'form-control'}),
+            'image': forms.FileInput(attrs={'class': 'form-control'}),
+        }
 
 class FoodWasteForm(forms.ModelForm):
     class Meta:
