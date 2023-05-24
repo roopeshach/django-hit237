@@ -4,18 +4,18 @@
     <div class="container ">
         <div class="row justify-content-center">
             <div class="col-lg-8">
-                <h2>Waste Types.</h2>
+                <h2>Food Waste.</h2>
                 {% for m in messages %}
                     <div class="alert alert-primary" > {{m}}</div>
                 {% endfor %}
                 <!-- Button trigger modal -->
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                        Add New Waste Type
+                        Add New Food  Waste 
                     </button>
                     
                     <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
+                    <div class="modal fade " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
@@ -41,24 +41,39 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th> SN </th>
-                            <th>Waste Type Name</th>
-                            <th>Description</th>
-                            <th>Image</th>
+                            <th>SN</th>
+                            <th> Name </th>
+                            <th> Type </th>
+
+                            <th> Description </th>
+                            <th>Source</th>
+                            <th>Where to throw</th>
+                            <th>Time to Decay</th>
+                            <th>Carbon footprint</th>
+                            <th>Added By</th>
+                            <th> Image </th>
+
                             <th> Edit </th>
                             <th> Delete </th>
                         </tr>
                     </thead>
 
                     <tbody>
-                        {% for type in waste_types %}
+                        {% for waste in food_wastes %}
                         <tr>
                             <td>{{forloop.counter}}</td>
-                            <td>{{type.name}}</td>
-                            <td>{{type.description}}</td>
-                            <td><img src="{{type.image.url}}" alt="{{type.name}}" width="100px"></td>
-                            <td><a class="btn btn-warning" href="{% url 'edit-waste-type' type.id %}">Edit</a></td>
-                            <td><a class="btn btn-danger" href="{% url 'delete-waste-type' type.id %}">Delete</a></td>
+                            <td>{{waste.name}}</td>
+                            <td>{{waste.type}}</td>
+                            <td>{{waste.description}}</td>
+                            <td>{{waste.source}}</td>
+
+                            <td>{{waste.where_to_throw}}</td>
+                            <td>{{waste.time_to_decay}}</td>
+                            <td>{{waste.carbon_footprint}}</td>
+                            <td>{{waste.added_by}}</td>
+                            <td><img src="{{waste.image.url}}" alt="{{waste.name}}" width="100px"></td>
+                            <td><a class="btn btn-warning" href="{% url 'edit-food-waste' waste.id %}">Edit</a></td>
+                            <td><a class="btn btn-danger" href="{% url 'delete-food-waste' waste.id %}">Delete</a></td>
                         </tr>
                         {% endfor %}
                     </tbody>

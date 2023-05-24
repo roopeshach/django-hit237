@@ -26,4 +26,14 @@ class FoodWasteForm(forms.ModelForm):
     class Meta:
         model = FoodWaste
         fields = ('name', 'type', 'description', 'source', 'where_to_throw', 'image', 'time_to_decay', 'carbon_footprint', 'added_by')
-
+        widgets = {
+            'name': forms.TextInput(attrs={'class': 'form-control'}),
+            'type': forms.Select(attrs={'class': 'form-control'}),
+            'description': forms.Textarea(attrs={'class': 'form-control'}),
+            'source': forms.TextInput(attrs={'class': 'form-control'}),
+            'where_to_throw': forms.TextInput(attrs={'class': 'form-control'}),
+            'image': forms.FileInput(attrs={'class': 'form-control'}),
+            'time_to_decay': forms.TextInput(attrs={'class': 'form-control'}),
+            'carbon_footprint': forms.TextInput(attrs={'class': 'form-control'}),
+            'added_by': forms.Select(attrs={'class': 'form-control'}),
+        }

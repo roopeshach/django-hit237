@@ -31,7 +31,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-8">
                 <h2>Members of project.</h2>
-                <table>
+                <table class="table table-striped">
                     <thead>
                         <tr>
                             <th>Member Name</th>
@@ -44,7 +44,7 @@
                         {% for member in students %}
                         <tr>
                             <td>{{member.name}}</td>
-                            <td>{{member.student_id}}</td>
+                            <td>{{member.roll}}</td>
                             <td><img src="{{member.image.url}}" alt="{{member.name}}" width="100px"></td>
                         </tr>
                         {% endfor %}
