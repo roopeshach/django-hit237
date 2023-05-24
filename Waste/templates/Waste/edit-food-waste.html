@@ -1,0 +1,23 @@
+{% include 'Waste/base.html' %}
+
+<section id="members">
+    <div class="container ">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <h2>Edit Food Waste  {{food_waste.name}}</h2>
+                
+                <hr>
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{form}}
+                    
+                    <p> Current Image: </p>
+                    <img src="{{food_waste.image.url}}" alt="{{food_waste.name}}" class="img-fluid">
+                    <br>
+                    <button type="submit" class=" mt-3 btn btn-primary">Update</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include 'Waste/footer.html' %}
