@@ -1,5 +1,5 @@
 from django import forms
-from .models import Student, WasteType, FoodWaste
+from .models import Student, WasteType, FoodWaste, FoodRecovery
 
 class StudentForm(forms.ModelForm):
     class Meta:
@@ -36,4 +36,13 @@ class FoodWasteForm(forms.ModelForm):
             'time_to_decay': forms.TextInput(attrs={'class': 'form-control'}),
             'carbon_footprint': forms.TextInput(attrs={'class': 'form-control'}),
             'added_by': forms.Select(attrs={'class': 'form-control'}),
+        }
+
+class FoodRecoveryForm(forms.ModelForm):
+    class Meta:
+        model = FoodRecovery
+        fields = ('title', 'process',)
+        widgets = {
+            'title': forms.TextInput(attrs={'class': 'form-control'}),
+            'process': forms.Textarea(attrs={'class': 'form-control'}),
         }

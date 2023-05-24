@@ -1,6 +1,6 @@
 
 from django.urls import path
-from . import views, student_views, waste_type_views, food_waste_views
+from . import views, student_views, waste_type_views, food_waste_views, food_recovery_views
 
 urlpatterns = [
     path('', views.index, name="index"),
@@ -15,4 +15,9 @@ urlpatterns = [
     path('food-waste', food_waste_views.food_waste, name='food-waste'),
     path('food-waste/delete/<int:id>', food_waste_views.delete_food_waste, name='delete-food-waste'),
     path('food-waste/edit/<int:id>', food_waste_views.edit_food_waste, name='edit-food-waste'),
+
+    path('food-recovery', food_recovery_views.food_recovery, name='food-recovery'),
+    path('food-recovery/delete/<int:id>', food_recovery_views.delete_food_recovery, name='delete-food-recovery'),
+    path('food-recovery/edit/<int:id>', food_recovery_views.edit_food_recovery, name='edit-food-recovery'),
+
 ]

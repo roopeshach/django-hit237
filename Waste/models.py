@@ -41,6 +41,13 @@ class FoodWaste(models.Model):
 
     def __str__(self):
         return self.name
+
+class FoodRecovery(models.Model):
+    title = models.CharField(max_length=254)
+    process = models.TextField()
+
+    def __str__(self):
+        return self.title
     
-
-
+    
+    
