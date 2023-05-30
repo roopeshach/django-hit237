@@ -8,12 +8,20 @@ def index(request):
     #  a brief paragraph that introduces the website 
     intro = """
    <h2>About Food Waste</h2>
-    <p>
-    This website provides information about different types of food waste, including their name, type, description, source, where to throw, time to decay, and carbon footprint.
-    </p>
-    <p>
-    FoodWaste is a model that has attributes like name, type, description, source, where_to_throw, image, time_to_decay, and carbon_footprint. With separate pages for each food waste item, you can view its details and learn more about how to reduce food waste and properly dispose of it.
-    </p>
+    <p>Welcome to our Django website! We are proud to present a platform that aims to raise awareness about waste management and promote sustainable practices. Our website provides valuable information on various waste types and their impact on the environment.</p>
+
+    <p>Through our comprehensive database, you can explore different categories of waste, such as food waste, and learn about their sources, how to dispose of them properly, and their environmental consequences. Our dedicated team of students has worked diligently to create a user-friendly interface that allows you to navigate effortlessly through the website and access essential information.</p>
+
+    <p>Using Django's dynamic database storage, we ensure that the information on our website is constantly updated and easily accessible. The website incorporates Django ModelForms, enabling you to interact with the database by submitting user input that can influence waste management practices.</p>
+
+    <p>With full CRUD functionality for each table in our data model, you have the ability to create, read, update, and delete records seamlessly. Whether you want to add new waste types, contribute information about food waste, or explore sustainable food recovery methods, our website provides a robust platform for managing waste-related data.</p>
+
+    <p>All hyperlinks on our website are constructed using named URL Paths and the {% url %} template tag, ensuring a consistent and efficient navigation experience. The website adheres to standard HTML5 syntax and incorporates essential formatting elements, such as headers, tables, hyperlinks, and text formatting, to enhance readability and usability.</p>
+
+    <p>Our data model includes multiple related classes, including Student, WasteType, FoodWaste, and FoodRecovery, with appropriate relationships defined using Django's model fields. Furthermore, we have provided a sample dataset with primary and secondary records associated with each primary record, ensuring a meaningful and realistic representation of waste management data.</p>
+
+    <p>Visit our website and join us in our mission to promote sustainable waste management practices. Together, we can make a positive impact on the environment and create a greener future for generations to come.</p>
+
     <h3>Features</h3>
     <ul>
     <li>Clickable links for every food waste's page.</li>
